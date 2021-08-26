@@ -3,6 +3,4 @@
 """
 
 from tkinter import *
-
-
 mainloop()
