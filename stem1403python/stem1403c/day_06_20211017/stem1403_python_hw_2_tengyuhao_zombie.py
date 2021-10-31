@@ -25,6 +25,19 @@ class Zombie:
         pass
 
 
+class SnowPea:
+    def __init__(self, name, color, hp, height, shot_distance):
+        self.name = name
+        self.color = color
+        self.hp = hp
+        self.height = height
+        self.shot_distance = shot_distance
+
+    #  adding methods
+    def shoot(self):
+        pass
+
+
 class NormalZombie:
     def __init__(self, name, color, hp, height, speed, clothing):
         self.name = name
