@@ -14,7 +14,9 @@ Submit your code including your description of the battle process
 
 """
 
-zombie_total = 3
+import time
+
+zombie_total = 3        # global variable
 
 
 class SnowPea:
@@ -124,11 +126,15 @@ class FlagZombie:
     def getHurt(self):
         self.hp -= 20
         print("Flag Zombie is get hurt, hp-20")
+
         if self.hp == 0:
-            global zombie_total
-            print("One Flag Zombie is dead")
-            zombie_total -= 1
-            print(f"You have {zombie_total} to kill.")
+            self.die()
+
+    def die(self):
+        global zombie_total
+        print("One Flag Zombie is dead")
+        zombie_total -= 1
+        print(f"You have {zombie_total} to kill.")
 
 
 class PoleVaultingZombie:
@@ -163,10 +169,15 @@ class PoleVaultingZombie:
             print(f"You have {zombie_total} to kill.")
 
 
-hp = 120
-height = 120
-color = "NormalZombieColor"
+class Bullet:
+    def __init__(self):
+        self.dmg = 20
+
+# hp = 120
+# height = 120
+# color = "NormalZombieColor"
 # shot_number = 6
+
 
 putNormalZombie = NormalZombie(8, 7)
 
@@ -200,7 +211,7 @@ for i in range(2):
     # print(putNormalZombie.hp)
 
 putFlagZombie.move()
-
+time.sleep(3)
 for i in range(2):
     print()
     putSnowPea_2.shoot()
@@ -223,4 +234,5 @@ for i in range(6):
     putSnowPea.shoot()
     putPoleVaultingZombie.getHurt()
 
-print("Ok Finally you killed all the zombies. Goodjob! ")
+
+print("Ok Finally you killed all the zombies. Good job! ")
