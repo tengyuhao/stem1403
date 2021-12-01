@@ -43,4 +43,7 @@ tom = Cat('Tom', 1)
 print(tom)
 # output: <__main__.Cat object at 0x7f86741befd0>
 
+# .... in use
+# accessing attribute, manipulating
 
+# destroy
