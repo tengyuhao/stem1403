@@ -29,3 +29,4 @@ print(tom.color)
 peter = Cat("Peter", 2)
 peter.color = "white"
 print(peter.color)   # error
+

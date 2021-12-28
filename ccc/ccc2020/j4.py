@@ -1,9 +1,11 @@
 """
+J4 2020
 
 """
-S = input()
 T = input()
-res = S in T
+S = input()
+
+res = None
 # print(res)
 
 # generate all forms of string
@@ -15,10 +17,11 @@ for i in range(n):
     S = S[1:] + S[0]
     cyclic.append(S)
 
-print(cyclic)
+# print(cyclic)
+res = "no"
 for i in cyclic:
-    if T in i == True:
-        print("yes")
-    else:
-        print("no")
+    if i in T:
+        res = "yes"
         break
+
+print(res)

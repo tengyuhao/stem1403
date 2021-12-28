@@ -20,7 +20,7 @@ class House:
 
         self.listF.addItem(houseItem)
 
-        self.freearea = House.self.area - self.area
+        self.freearea = self.area - self.area
 
     def __str__(self):
         return f"Type of home: {self.typeH}, Free Area finally:{self.addItem()}, list: {self.list}"
