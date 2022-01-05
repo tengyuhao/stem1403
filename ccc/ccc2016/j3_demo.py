@@ -1,27 +1,9 @@
-
-# def getIndexofChar(char, words):
-#     index_char = []
-#
-#     PLACEGHOLDER = "0"
-#
-#     while True:
-#         if char in words:
-#             res = words.index(char)
-#             print(res)
-#             index_char.append(res)
-#             words = words.replace(char, PLACEGHOLDER, 1)
-#         # print(words)
-#         else:
-#             break
-#     return index_char
-
 """
-
-资源： 0.204s, 9.24 MB
+2016 J3
+资源： 0.206s, 9.26 MB
 最慢一次测试的运行时间 0.026s
 最终得分： 15/15 (5.0/5 points)
 """
-
 
 def getIndexOfChar(char, words):
     index_char = []
@@ -32,28 +14,20 @@ def getIndexOfChar(char, words):
     return index_char
 
 
-
-
-
-
-
-
 # main program
 max_long = 0
 WORDS = input()
 
 for i in WORDS:
     mychar = i
-    result = getIndexOfChar(mychar, WORDS)
     index_charL = getIndexOfChar(mychar, WORDS)
-    # print(result)
-    indexlist = result
 
-    for x in indexlist:
-        for y in indexlist:
-            if y >= x:
+    # print(result)
+    for i in range(len(index_charL)):
+        for i2 in range(len(index_charL)):
+            if index_charL.index(index_charL[i2]) >= i:
                 # print(indexlist[i], indexlist[i2])
-                new_str = WORDS[x:y + 1]
+                new_str = WORDS[index_charL[i]:index_charL[i2] + 1]
                 # print(new_str)
                 if new_str == new_str[::-1]:
                     long = len(new_str)
