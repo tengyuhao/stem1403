@@ -10,7 +10,7 @@ Module a file containing python statement and definitions
 module is a python file
 """
 
-import py200723.mymodule as mymodule
+import stem1402python.py200723.mymodule as mymodule
 
 # from py200723.mymodule import foo3
 # from py200723.mymodule import foo2, foo1

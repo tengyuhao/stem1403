@@ -1,20 +1,4 @@
 
-# def getIndexofChar(char, words):
-#     index_char = []
-#
-#     PLACEGHOLDER = "0"
-#
-#     while True:
-#         if char in words:
-#             res = words.index(char)
-#             print(res)
-#             index_char.append(res)
-#             words = words.replace(char, PLACEGHOLDER, 1)
-#         # print(words)
-#         else:
-#             break
-#     return index_char
-
 """
 
 资源： 0.204s, 9.24 MB
@@ -30,12 +14,6 @@ def getIndexOfChar(char, words):
         if char == c:
             index_char.append(index)
     return index_char
-
-
-
-
-
-
 
 
 # main program

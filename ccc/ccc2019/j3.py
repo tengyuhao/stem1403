@@ -1,17 +1,27 @@
 N = int(input())
 num = 0
-
+last = None
+listABC = []
 for i in range(N):
     abc = list(input())
-    print(abc)
-    for i2 in range(len(abc)):
-        if abc[i2+1] != abc[i2]:
+    listABC.append(abc)
+print(listABC)
+
+for i in listABC:
+    num = 0
+    for i2 in i:
+        if i2 != last:
+            pass
             # print(num)
-            print("!=")
-        elif abc[i2+1] == abc[i2]:
+            # print("!=")
+        elif i2 == last:
             num += 1
-            print("==")
+            # print("==")
 
         else:
-            break
-print(num)
+            pass
+        last = i2
+
+        # print(num)
+
+    print(f"{last} {num}")

@@ -20,10 +20,8 @@ def check(time):
             abc += 1
             if abc == len(time)-1:
                 total += 1
-    # print(time)
 
-
-def convert(timeminutes, hour, minutes):
+def convert(hour, minutes):
     global total
     if minutes < 10:
         time = f"{hour}0{minutes}"
@@ -35,7 +33,6 @@ def convert(timeminutes, hour, minutes):
 
 
 # main
-# time = "1200" + timeinminutes
 timeminutes = int(input())
 total = 0
 sequence = 31    # to calculate
@@ -48,10 +45,10 @@ hour = timeminutes // 60
 minutes = timeminutes % 60
 new_min = 0
 new_hour = 12
-# print(hour)
 if hour == 0:
     hour = 12
 # print(hour, minutes)
+
 while True:
     if new_min == minutes and new_hour == hour:
         break
@@ -64,6 +61,6 @@ while True:
             new_hour = 1
     # print(new_hour, new_min)
     # convert(timeminutes, new_hour, new_min)
-    check(convert(timeminutes, new_hour, new_min))
+    check(convert(new_hour, new_min))
 
 print(total)

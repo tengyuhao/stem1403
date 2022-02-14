@@ -19,38 +19,46 @@ def rotateRight(matrix):
     matrix[:] = map(list, zip(*matrix[::-1]))
     return matrix
 
+def output(matrix):
+    for line in matrix:
+        for num in line:
+            print(num, end=" ")
+        print()
+
 
 N = int(input())
-matrix = [[] for i in range(N)]
+matrix =[[0 for i in range(N)] for j in range(N)]
 answer = []
 # matrix = [['3', '7', '9'], ['2', '5', '6'], ['1', '3', '4']]
 for i in range(N):
     line = input().split(" ")
+    line = list(map(int, line))
     matrix[i] = line
 
-a = matrix[0][0]
-b = matrix[0][N-1]
-c = matrix[N-1][0]
-d = matrix[N-1][N-1]
+list1 = []
+for i in range(len(matrix)):
+    if i == 0:
+        list1.append(matrix[i][0])
+        list1.append(matrix[i][-1])
+    if i == 2:
+        list1.append(matrix[i][0])
+        list1.append(matrix[i][-1])
+# print(list1)
+res = list1.index(min(list1))
 
-res = min(a,b,c,d)
 
-if a == res:
+if res == 0:
     # right
     # print(0)
-    m = matrix
-if b == res:
+    output(matrix)
+if res == 1:
     # print("1")
     m = rotateLeft(matrix)
-if c == res:
-
+    output(m)
+if res == 2:
     m = rotateRight(matrix)
-if d == res:
+    output(m)
+if res == 3:
     m = rotateLeft(rotateLeft(matrix))
+    output(m)
     # print("d")
-
-# print(m)
-for line in m:
-    for num in line:
-        print(num, end=" ")
-    print()
