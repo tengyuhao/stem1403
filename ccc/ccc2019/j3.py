@@ -1,27 +1,21 @@
-N = int(input())
-num = 0
-last = None
-listABC = []
-for i in range(N):
-    abc = list(input())
-    listABC.append(abc)
-print(listABC)
+repeated_count = int(input())
 
-for i in listABC:
-    num = 0
-    for i2 in i:
-        if i2 != last:
-            pass
-            # print(num)
-            # print("!=")
-        elif i2 == last:
-            num += 1
-            # print("==")
+encoded_lines = []
+for _ in range(repeated_count):
+    line = input()
+    pairs = []
 
-        else:
-            pass
-        last = i2
+    i = 0
+    while i < len(line):
+        repeated_count = 0
+        c = line[i]
+        while i < len(line) and line[i] == c:
+            repeated_count += 1
+            i += 1
+        pairs.append(f"{repeated_count} {c}")
 
-        # print(num)
 
-    print(f"{last} {num}")
+    encoded_lines.append(" ".join(pairs))
+
+
+print("\n".join(encoded_lines))
