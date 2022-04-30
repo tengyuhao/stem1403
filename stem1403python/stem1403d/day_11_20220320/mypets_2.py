@@ -23,10 +23,6 @@ class Dog(Pet):
         print("A dog eats")
 
 
-class Hamster(Pet):
-    def eat(self):
-        print("A hamster eats")
-
 
 class Person:
     def __init__(self, name):
@@ -49,6 +45,3 @@ person1.feed(cat1)
 
 dog1 = Dog("dog")
 person1.feed(dog1)
-
-hamster1 = Hamster("hamster")
-person1.feed(hamster1)
