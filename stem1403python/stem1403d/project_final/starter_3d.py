@@ -11,16 +11,12 @@ class Shapes3D:
         self.name = ""
         self.volume = None
         self.sur_area = None
-        self.formulaV = ""
-        self.formulaA = ""
 
     def getVolume(self):
-        self.volume = self.formulaV
-        print(self.volume)
+        pass
 
     def getSurfaceArea(self):
-        self.sur_area = self.formulaA
-        print(self.sur_area)
+        pass
 
     def draw(self):
         print(self.name, "is drawing.")
@@ -29,12 +25,28 @@ class Shapes3D:
 class Sphere(Shapes3D):
     def __init__(self, r):
         self.name = "Sphere"
-        self.formulaV = 4/3 * pi * r * r * r
-        self.formulaA = 4 * pi * r * r
+        self.r = r
+        super.__init__(self.volume, self.sur_area)
+
+    def getVolume(self):
+        self.volume = 4/3 * pi * self.r * self.r * self.r
+        print(self.volume)
+
+    def getSurfaceArea(self):
+        self.sur_area = 4 * pi * self.r * self.r
+        print(self.sur_area)
 
 
 class Cube(Shapes3D):
     def __init__(self, s):
         self.name = "Sphere"
-        self.formulaV = s * s * s
-        self.formulaA = s * s * 6
+        self.s = s
+        super.__init__(self.volume, self.sur_area)
+
+    def getVolume(self):
+        self.volume = self.s * self.s * self.s
+        print(self.volume)
+
+    def getSurfaceArea(self):
+        self.sur_area = self.s * self.s * 6
+        print(self.sur_area)

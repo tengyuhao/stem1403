@@ -11,16 +11,12 @@ class Shapes2D:
         self.name = ""
         self.perimeter = None
         self.area = None
-        self.formulaP = ""
-        self.formulaA = ""
 
     def getPerimeter(self):
-        self.perimeter = self.formulaP
-        print(self.perimeter)
+        pass
 
     def getArea(self):
-        self.area = self.formulaA
-        print(self.area)
+        pass
 
     def draw(self):
         print(self.name, "is drawing.")
@@ -29,27 +25,60 @@ class Shapes2D:
 class Rectangle(Shapes2D):
     def __init__(self, L, l):
         self.name = "Rectangle"
-        self.formulaP = 2 * (l + L)
-        self.formulaA = L * l
+        self.l = l
+        self.L = L
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = 2 * (self.l + self.L)
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.l * self.L
+        print(self.area)
 
 
 class Square(Shapes2D):
     def __init__(self, l):
         self.name = "Square"
-        self.formulaP = l * 4
-        self.formulaA = l * l
+        self.l = l
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = self.l * 4
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.l * self. l
+        print(self.area)
 
 
 class Circle(Shapes2D):
     def __init__(self, r):
         self.name = "Circle"
-        self.formulaP = r * 2 * pi
-        self.formulaA = r * r * pi
+        self.r = r
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = self.r * 2 * pi
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.r * self.r * pi
+        print(self.area)
 
 
 class Triangle(Shapes2D):
     def __init__(self, a):
         self.name = "Equilateral Triangle"
-        self.formulaP = a * 3
-        self.formulaA = sqrt(3/4 * a * a)
+        self.a = a
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = self.a * 3
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area =  sqrt(3/4 * self.a * self.a)
+        print(self.area)
 

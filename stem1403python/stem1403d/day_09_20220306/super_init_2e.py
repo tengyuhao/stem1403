@@ -20,3 +20,4 @@ c1 = Child('Peter', 16)
 print(c1.age)
 print(c1.name)
 
+print(dir(c1))

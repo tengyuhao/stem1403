@@ -11,17 +11,13 @@ class Shapes2D:
         self.name = ""
         self.perimeter = None
         self.area = None
-        self.formulaP = ""
-        self.formulaA = ""
         self.color = ""
 
     def getPerimeter(self):
-        self.perimeter = self.formulaP
-        print(self.perimeter)
+        pass
 
     def getArea(self):
-        self.area = self.formulaA
-        print(self.area)
+        pass
 
     def setColor(self, color):
         self.color = color
@@ -33,27 +29,59 @@ class Shapes2D:
 class Parallelogram(Shapes2D):
     def __init__(self, a, b, h):
         self.name = "Parallelogram"
-        self.formulaP = 2 * (a + b)
+        self.a, self.b, self.h = a, b, h
         self.formulaA = h * b
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = 2 * (self.a + self.b)
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.h * self.b
+        print(self.area)
 
 
 class Oval(Shapes2D):
     def __init__(self, a, b):
         self.name = "Oval"
-        self.formulaP = 2 * pi * b + 4 * (a - b)
-        self.formulaA = a * b * pi
+        self.a, self.b = a, b
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = 2 * pi * self.b + 4 * (self.a - self.b)
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.a * self.b * pi
+        print(self.area)
 
 
 class Rhombus(Shapes2D):
     def __init__(self, a, c, d):
         self.name = "Rhombus"
-        self.formulaP = a * 4
-        self.formulaA = c * d / 2
+        self.a, self.c, self.d = a, c, d
+        super.__init__(self.perimeter, self.area)
+
+    def getPerimeter(self):
+        self.perimeter = self.a * 4
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.c * self.d / 2
+        print(self.area)
 
 
 class TriangleR(Shapes2D):
     def __init__(self, b, h, hy):
         self.name = "Right Triangle"
-        self.formulaP = b + h + hy
-        self.formulaA = b * h
+        self.b, self.h, self.hy = b, h, hy
+        super.__init__(self.perimeter, self.area)
 
+    def getPerimeter(self):
+        self.perimeter = self.b + self.h + self.hy
+        print(self.perimeter)
+
+    def getArea(self):
+        self.area = self.b * self.h
+        print(self.area)
